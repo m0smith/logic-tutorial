@@ -15,7 +15,7 @@
 (defn zebrao [hs]
   (macro/symbol-macrolet [_ (lvar)]
    (all
-    (?== [_ _ [_ _ 'milk _ _] _ _] hs)                         
+    (?== [_ _ [_ _ 'milk _ _] _ _] hs)                        
     (firsto hs ['norwegian _ _ _ _])                         
     (nexto ['norwegian _ _ _ _] [_ _ _ _ 'blue] hs)       
     (righto [_ _ _ _ 'ivory] [_ _ _ _ 'green] hs)         
