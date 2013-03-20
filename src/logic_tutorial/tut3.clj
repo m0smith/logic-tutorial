@@ -1,6 +1,6 @@
 (ns logic-tutorial.tut3
-  (:refer-clojure :exclude [==])
-  (:use [clojure.core.logic]
+  (:use [clojure.pprint]
+        [clojure.core.logic  :rename {== ?==}]
         [clojure.tools.macro :as macro]))
 
 (defne righto [x y l]
@@ -15,7 +15,7 @@
 (defn zebrao [hs]
   (macro/symbol-macrolet [_ (lvar)]
    (all
-    (== [_ _ [_ _ 'milk _ _] _ _] hs)                         
+    (?== [_ _ [_ _ 'milk _ _] _ _] hs)                         
     (firsto hs ['norwegian _ _ _ _])                         
     (nexto ['norwegian _ _ _ _] [_ _ _ _ 'blue] hs)       
     (righto [_ _ _ _ 'ivory] [_ _ _ _ 'green] hs)         
